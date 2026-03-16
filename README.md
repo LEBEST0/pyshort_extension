@@ -1,42 +1,129 @@
-🚀 Installation
-Depuis le Chrome Web Store
+# PyShort — Raccourcisseur d'URLs
 
-Bientôt disponible
+## 📋 Description
 
-En mode développeur (installation manuelle)
+**PyShort** est une extension de navigateur qui permet de raccourcir rapidement les URLs directement depuis votre navigateur Chrome. En un simple clic droit, transformez vos liens longs et complexes en URLs courtes et partageables.
 
-1- Téléchargez ou clonez ce dépôt
-https://github.com/LEBEST0/pyshort_extension.git
+## ✨ Fonctionnalités
 
-2- Ouvrez Chrome et allez sur chrome://extensions/
+- **Raccourcir un lien** : Clic droit sur n'importe quel lien pour le raccourcir
+- **Raccourcir la page actuelle** : Clic droit sur la page pour raccourcir l'URL de la page courante
+- **Copie automatique** : Les URLs raccourcies s'affichent dans un toast intégré à la page
+- **Notification de succès** : Confirmation visuelle lors du raccourcissement réussi
+- **Configuration personnalisée** : Possibilité de spécifier un serveur API personnalisé
 
-3- Activez le Mode développeur ( en haut à droite)
+## 🚀 Installation
 
-4- Cliquez sur "Charger l'extension non empaquetée"
+### Depuis le code source
 
-5- Sélectionnez le dossier extension/ du projet
+1. Clonez ce repository :
+   ```bash
+   git clone https://github.com/LEBEST0/pyshort_extension.git
+   ```
 
-L'icône PyShort apparaît dans votre barre d'outils 🚀
+2. Ouvrez Chrome et accédez à `chrome://extensions/`
 
+3. Activez le **Mode de développement** (coin supérieur droit)
 
-📁 Structure des fichiers
+4. Cliquez sur **Charger l'extension non empaquetée** et sélectionnez le dossier du projet
 
-extension/
-├── manifest.json       # Configuration et permissions
-├── popup.html          # Interface du bouton (2 onglets)
-├── popup.js            # Logique du popup
-├── background.js       # Service worker (clic droit + toast)
-└── icons/
-    ├── icon16.png
-    ├── icon48.png
-    └── icon128.png
+## 📂 Structure du projet
 
+```
+pyshort_extension/
+├── manifest.json      # Configuration de l'extension
+├── background.js      # Service worker (gestion des clics et requêtes API)
+├── popup.html         # Interface du popup
+├── popup.js          # Logique du popup
+├── icons/            # Icônes de l'extension
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+└── README.md         # Documentation
+```
 
-🔗 Projets liés
-Projet            Description
-PyShort-cli       Interface ligne de commande — pip install pyshort-cli 
-PyShort           BackendAPI REST FastAPI déployée sur Render
+## 🛠️ Configuration
 
+### Serveur API personnalisé
 
-📄 Licence
-Ce projet est sous licence MIT — vous êtes libre de l'utiliser, le modifier et le distribuer.
+Par défaut, l'extension utilise le serveur :
+```
+https://url-short-1-vaqx.onrender.com
+```
+
+Pour utiliser un serveur API différent, vous pouvez le configurer dans le popup de l'extension.
+
+### Permissions requises
+
+L'extension utilise les permissions suivantes :
+- `activeTab` : Accès à l'onglet actif
+- `contextMenus` : Ajout d'options au menu contextuel
+- `storage` : Stockage des préférences
+- `clipboardWrite` : Écriture dans le presse-papiers
+- `clipboardRead` : Lecture du presse-papiers
+- `notifications` : Affichage des notifications
+- `scripting` : Injection de scripts dans les pages web
+
+## 📖 Utilisation
+
+1. **Raccourcir un lien** :
+   - Clic droit sur un lien
+   - Sélectionnez "🔗 Raccourcir ce lien"
+   - L'URL raccourcie s'affiche dans un toast
+
+2. **Raccourcir la page courante** :
+   - Clic droit sur la page (pas sur un lien)
+   - Sélectionnez "🔗 Raccourcir cette page"
+   - L'URL raccourcie s'affiche dans un toast
+
+3. **Copier l'URL** :
+   - Cliquez sur le bouton "Copier" dans le toast
+   - L'URL courte est copiée dans votre presse-papiers
+
+## 🔧 Architecture
+
+### background.js
+- Gestion du menu contextuel Chrome
+- Communication avec l'API de raccourcissement
+- Injection du toast dans les pages web
+
+### popup.html / popup.js
+- Interface de configuration
+- Gestion des paramètres utilisateur
+- Affichage des statistiques
+
+## ⚙️ Technologies
+
+- **JavaScript** (63.5%)
+- **HTML** (36.5%)
+- **Chrome Extension APIs**
+
+## 🐛 Dépannage
+
+**"Serveur inaccessible"**
+- Vérifiez que l'API est accessible
+- Assurez-vous d'avoir une connexion Internet
+- Vérifiez l'URL du serveur configuré
+
+**Toast n'apparaît pas**
+- Vous êtes peut-être sur une page protégée (ex: `chrome://`)
+- Une notification système s'affichera à la place
+
+## 📝 Licence
+
+Ce projet est ouvert à tous. Consultez le fichier LICENSE pour plus de détails.
+
+## 👤 Auteur
+
+Développé par [LEBEST0](https://github.com/LEBEST0)
+
+## 🤝 Contribution
+
+Les contributions sont bienvenues ! N'hésitez pas à :
+- Signaler des bugs
+- Proposer des améliorations
+- Créer des pull requests
+
+---
+
+**Dernière mise à jour** : Mars 2026

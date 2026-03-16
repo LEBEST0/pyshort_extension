@@ -80,6 +80,17 @@ L'extension utilise les permissions suivantes :
    - Cliquez sur le bouton "Copier" dans le toast
    - L'URL courte est copiée dans votre presse-papiers
 
+## 🧩 Compatibilité
+ 
+| Navigateur | Statut |
+|---|---|
+| Google Chrome | ✅ Supporté |
+| Microsoft Edge | ✅ Supporté |
+| Mozilla Firefox | ⚙️ Supporté avec adaptation mineure |
+| Safari | ❌ Non testé |
+
+ L'adaption pour Mozilla Firefox consiste à remplacer chrome. par browser. dans les fichiers JS. 
+---
 ## 🔧 Architecture
 
 ### background.js
@@ -94,9 +105,9 @@ L'extension utilise les permissions suivantes :
 
 ## ⚙️ Technologies
 
-- **JavaScript** (63.5%)
-- **HTML** (36.5%)
-- **Chrome Extension APIs**
+- **JavaScript** 
+- **HTML** 
+- **Chrome Extension**
 
 ## 🐛 Dépannage
 
